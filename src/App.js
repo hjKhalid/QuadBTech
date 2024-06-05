@@ -1,25 +1,25 @@
-import logo from './logo.svg';
+import React from 'react';
+import { Provider } from 'react-redux';
+import store from './store';
+// import TaskInput from './components/TaskInput';
+// import TaskList from './components/TaskList';
+// import WeatherDisplay from './components/WeatherDisplay';
 import './App.css';
+import TaskInput from './component/TaskInput';
+import TaskList from './component/TaskList';
+import WeatherDisplay from './component/WeatherDisplay';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    return (
+        <Provider store={store}>
+            <div className="App">
+                <h1>Advanced To-Do Application</h1>
+                <TaskInput />
+                <TaskList />
+                <WeatherDisplay />
+            </div>
+        </Provider>
+    );
+};
 
 export default App;
